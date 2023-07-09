@@ -101,6 +101,10 @@ function removeTodoItem(todo) {
 }
 
 function editTodoItem(todo) {
+  if (todo.checked) {
+    alert("The task is already completed, mark it un complete then edit it ");
+    return;
+  }
   const newText = prompt("Enter new task");
   if (newText !== null && newText.trim() !== "") {
     todo.text = newText.trim();

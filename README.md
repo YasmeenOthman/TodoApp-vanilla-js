@@ -14,7 +14,7 @@ This project is a teaching resource for a full-stack course, showcasing the impl
 
 ## screenShot:
 
-<img width="300px" src="./images/1.png">
-<img width="300px" src="./images/2.png">
-<img width="300px" src="./images/3.png">
-<img width="300px" src="./images/4.png">
+<img width="200px" src="./images/1.png">
+<img width="200px" src="./images/2.png">
+<img width="200px" src="./images/3.png">
+<img width="200px" src="./images/4.png">
