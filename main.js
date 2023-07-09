@@ -18,7 +18,7 @@ function addTodo() {
   } else {
     let newTask = new CreateTodo(text);
     todoItems.push(newTask);
-    // console.log(todoItems);
+    saveTodoItems();
     renderTodo();
     taskText.value = "";
     taskText.focus();
@@ -39,6 +39,7 @@ function renderTodo() {
     checkbox.checked = todo.checked;
     checkbox.addEventListener("change", () => {
       todo.checked = checkbox.checked;
+      saveTodoItems();
       updateTodoItem();
     });
 
@@ -93,6 +94,7 @@ function removeTodoItem(todo) {
   if (index !== -1) {
     if (window.confirm("Are you sure ?!")) {
       todoItems.splice(index, 1);
+      saveTodoItems();
       renderTodo();
     }
   }
@@ -102,6 +104,7 @@ function editTodoItem(todo) {
   const newText = prompt("Enter new task");
   if (newText !== null && newText.trim() !== "") {
     todo.text = newText.trim();
+    saveTodoItems();
     renderTodo();
   }
 }
@@ -115,9 +118,26 @@ function removeCompletedTasks() {
       return !todo.checked;
     });
   }
-
+  saveTodoItems();
   renderTodo();
 }
+
+function saveTodoItems() {
+  localStorage.setItem("todoItems", JSON.stringify(todoItems));
+}
+
+function loadTodoItems() {
+  const storedItems = localStorage.getItem("todoItems");
+  if (storedItems) {
+    todoItems = JSON.parse(storedItems);
+    renderTodo();
+  }
+}
+
+// Load todo items from local storage on page load
+loadTodoItems();
+
+// Initial rendering of todo items
 
 addButton.addEventListener("click", addTodo);
 removeButton.addEventListener("click", removeLast);

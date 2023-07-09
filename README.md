@@ -9,6 +9,7 @@ This project is a teaching resource for a full-stack course, showcasing the impl
 - **JavaScript:** Used to implement the functionality of the todo application.
 - **HTML:** Responsible for structuring the project and creating the necessary elements.
 - **CSS:** Used for styling the application and enhancing the visual appeal.
+- **localStorage** : for saving data
 <hr/>
 
 ## screenShot:
