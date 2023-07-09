@@ -1,3 +1,19 @@
-# TodoApp-vanilla-js
+# VanillaJS TodoApp
 
-The project is a CRUD (Create, Read, Update, Delete) operation implementation for a todo application using JavaScript, HTML, and CSS.
+This project is a teaching resource for a full-stack course, showcasing the implementation of CRUD (Create, Read, Update, Delete) operations for a todo application. It utilizes JavaScript, HTML, and CSS to provide a functional and interactive user interface.
+
+<hr/>
+
+## Technologies Used:
+
+- **JavaScript:** Used to implement the functionality of the todo application.
+- **HTML:** Responsible for structuring the project and creating the necessary elements.
+- **CSS:** Used for styling the application and enhancing the visual appeal.
+<hr/>
+
+## screenShot:
+
+<img width="300px" src="./images/1.png">
+<img width="300px" src="./images/2.png">
+<img width="300px" src="./images/3.png">
+<img width="300px" src="./images/4.png">
