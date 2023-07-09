@@ -141,8 +141,6 @@ function loadTodoItems() {
 // Load todo items from local storage on page load
 loadTodoItems();
 
-// Initial rendering of todo items
-
 addButton.addEventListener("click", addTodo);
 removeButton.addEventListener("click", removeLast);
 removeCompleted.addEventListener("click", removeCompletedTasks);

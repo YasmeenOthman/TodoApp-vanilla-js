@@ -9,12 +9,22 @@ This project is a teaching resource for a full-stack course, showcasing the impl
 - **JavaScript:** Used to implement the functionality of the todo application.
 - **HTML:** Responsible for structuring the project and creating the necessary elements.
 - **CSS:** Used for styling the application and enhancing the visual appeal.
-- **localStorage** : for saving data
+- **localStorage** : for saving the tasks
 <hr/>
 
 ## screenShot:
 
-<img width="200px" src="./images/1.png">
-<img width="200px" src="./images/2.png">
-<img width="200px" src="./images/3.png">
-<img width="200px" src="./images/4.png">
+<img width="300px" src="./images/1.png">
+<img width="300px" src="./images/2.png">
+<img width="300px" src="./images/3.png">
+<img width="300px" src="./images/4.png">
+
+<hr/>
+
+## Usage:
+
+- Fork the repository.
+- Clone the repository to your local machine.
+- Build the project step by step instead of simply copying and pasting the code.
+- Familiarize yourself with the codebase, understand the different components, and how they interact.
+- Modify and customize the code as needed, experimenting with different features and functionalities.
