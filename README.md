@@ -6,10 +6,19 @@ This project is a teaching resource for a full-stack course, showcasing the impl
 
 ## Technologies Used:
 
-- **JavaScript:** Used to implement the functionality of the todo application.
-- **HTML:** Responsible for structuring the project and creating the necessary elements.
-- **CSS:** Used for styling the application and enhancing the visual appeal.
-- **localStorage** : for saving the tasks
+<dl>
+  <dt>JavaScript:</dt>
+  <dd>Used to implement the functionality of the todo application.</dd>
+  <dt>HTML:</dt>
+  <dd>Responsible for structuring the project and creating the necessary elements.</dd>
+
+  <dd>CSS:</dd>
+  <dt>Used for styling the application and enhancing the visual appeal.</dt>
+<dd>localStorage:</dd>
+  <dt>For saving the tasks</dt>
+
+</dl>
+
 <hr/>
 
 ## screenShot:
