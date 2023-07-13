@@ -20,7 +20,7 @@ This project is a teaching resource for a full-stack course, showcasing the impl
 
 <hr/>
 
-## screenShot:
+## screenShots:
 
 <img width="300px" src="./images/1.png">
 <img width="300px" src="./images/2.png">
