@@ -1,4 +1,4 @@
-let addButton = document.getElementById("addTask");
+let taskForm = document.getElementById("taskForm");
 let removeButton = document.getElementById("removeTask");
 let removeCompleted = document.getElementById("removeCompleted");
 let taskText = document.getElementById("inputTask");
@@ -13,7 +13,7 @@ function CreateTodo(text) {
 function addTodo() {
   let text = taskText.value;
   if (text === "" || text.trim() === "") {
-    alert("Please add a task!!");
+    showMessage("Please add a task!", "warning");
     return;
   } else {
     let newTask = new CreateTodo(text);
@@ -76,12 +76,14 @@ function renderTodo() {
 
 function removeLast() {
   if (todoItems.length === 0) {
-    alert("You have nothing to remove");
+    showMessage("You have nothing to remove!", "error");
+
     return;
   } else {
     if (window.confirm("Are you sure?")) {
       todoItems.pop();
       renderTodo();
+      showMessage("Last task removed!", "success");
     }
   }
 }
@@ -102,7 +104,11 @@ function removeTodoItem(todo) {
 
 function editTodoItem(todo) {
   if (todo.checked) {
-    alert("The task is already completed, mark it un complete then edit it ");
+    showMessage(
+      "The task is already completed, mark it un complete then edit it ",
+      "warning"
+    );
+
     return;
   }
   const newText = prompt("Enter new task");
@@ -115,13 +121,20 @@ function editTodoItem(todo) {
 
 function removeCompletedTasks() {
   if (todoItems.length === 0) {
-    alert("You have nothing to remove");
+    showMessage("Your list is empty, You have nothing to remove", "error");
     return;
-  } else if (window.confirm("Are you sure?")) {
-    todoItems = todoItems.filter((todo) => {
-      return !todo.checked;
-    });
   }
+  let itemsStatus = todoItems.filter((todo) => todo.checked);
+  if (itemsStatus.length > 0) {
+    if (window.confirm("Are you sure?")) {
+      todoItems = todoItems.filter((todo) => {
+        return !todo.checked;
+      });
+    }
+  } else {
+    showMessage("Nothing is completed yet", "error");
+  }
+
   saveTodoItems();
   renderTodo();
 }
@@ -138,9 +151,34 @@ function loadTodoItems() {
   }
 }
 
+function showMessage(text, type = "success", duration = 3000) {
+  const box = document.getElementById("messageBox");
+  const messageText = document.getElementById("messageText");
+
+  box.className = ""; // Reset classes
+  box.classList.add(type, "show");
+  messageText.textContent = text;
+
+  // Scroll to message
+  box.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // Auto-dismiss after duration
+  clearTimeout(box.dismissTimer); // Clear previous timer if any
+  box.dismissTimer = setTimeout(() => {
+    box.classList.remove("show");
+  }, duration);
+}
+
+document.getElementById("dismissMessage").addEventListener("click", () => {
+  document.getElementById("messageBox").classList.remove("show");
+});
+
 // Load todo items from local storage on page load
 loadTodoItems();
 
-addButton.addEventListener("click", addTodo);
+taskForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  addTodo();
+});
 removeButton.addEventListener("click", removeLast);
 removeCompleted.addEventListener("click", removeCompletedTasks);
